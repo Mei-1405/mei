@@ -5,11 +5,18 @@ import { navigation } from '../../routers/navigation'
 import { Login } from '../../screens'
 import { colors } from '../../styles'
 
-const Login_button = () => {
+interface props{
+    onPress:()=>void;
+    text:string;
+}
+
+const Login_button = (props:props) => {
     return (
         <SafeAreaView>
-            <Pressable bg={colors.primary[500]} p={'4'} onPress={() => navigation.navigate("Login")}>
-                <Text textAlign={'center'}>Loblacg in</Text>
+            <Pressable bg={colors.orange[500]} 
+             px={'125'} py={'4'}  mt={'20'} top={'50'} borderColor={'white'}
+             borderRadius={'5'} borderWidth={'2'} >
+                <Text textAlign={'center'} color={'white'} fontWeight={'extrabold'} >{props.text}</Text>
             </Pressable>
         </SafeAreaView >
     )

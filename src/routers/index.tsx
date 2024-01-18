@@ -1,7 +1,7 @@
 import React from 'react';
 import { navigationRef } from './navigation';
 import { NavigationContainer } from '@react-navigation/native';
-import { Welcome } from '../screens';
+import { Login, Welcome } from '../screens';
 import AppStack from './AppStack';
 
 
@@ -13,6 +13,8 @@ export default function Index() {
   const renderStack = () => {
     switch (Welcome) {
       case Welcome:
+        return <AppStack />
+      case Login:
         return <AppStack />
 
       default:
