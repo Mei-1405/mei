@@ -3,7 +3,6 @@ import { View } from 'react-native';
 import Carousel from 'react-native-snap-carousel';
 import { Box, Image, } from 'native-base'
 
-
 const Index = (_props: any) => {
     const isCarousel = React.useRef(null)
 
@@ -33,8 +32,10 @@ const Index = (_props: any) => {
 
     const renderItem = ({ item }: { item: { id: number; title: string; image: number; subtitle: string; } }) => (
 
-        <Box  >
-            <Image  resizeMode='center' width={'100'} source={item.image}  h={'64'} alt='image' />
+        <Box >
+            {/* <Image  resizeMode='center' w={'100'} source={item.image}  h={'64'} alt='image' /> */}
+            <Image  source={item.image}  h={'230'} w={'370'} alt='image' />
+
         </Box>
 
 
@@ -46,15 +47,15 @@ const Index = (_props: any) => {
                 ref={isCarousel}
                 data={quickAccessItems}
                 renderItem={renderItem}
-                sliderWidth={500}
-                itemWidth={800}
+                sliderWidth={720}
+                itemWidth={700}
                 loop={true}
                 autoplay={true}
                 inactiveSlideOpacity={0}
+                
             />
-
         </View>
     );
 };
 
-export default Index;
+export default Index;
